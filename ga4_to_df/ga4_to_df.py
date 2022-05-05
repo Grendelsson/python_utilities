@@ -38,7 +38,7 @@ def sample_run_report(property_id="MISSING", startDate="yesterday", endDate="yes
     for i in dims:
       dimList.append(Dimension(name=i))
     for i in mets:
-      dimList.append(Metric(name=i))
+      metList.append(Metric(name=i))
     
     # Using a default constructor instructs the client to use the credentials
     # specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
