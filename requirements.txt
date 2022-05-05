@@ -1,2 +1,3 @@
 google-analytics-data
 google.colab
+protobuf>=3.20.1
