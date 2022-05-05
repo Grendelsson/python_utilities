@@ -6,5 +6,5 @@ setup(name='ga4_to_df',
       author='Grendelsson',
       author_email='none',
       url='https://github.com/Grendelsson/python_utilities/',
-      packages=['ga4_to_df'],
+      packages=['ga4_to_df', 'colab_files'],
      )
