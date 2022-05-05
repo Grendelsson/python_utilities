@@ -26,7 +26,7 @@ def ga4_response_to_df(response):
   
 # Define default report dimensions and metrics
 defDims = ["eventName","pageTitle"]
-defMets = [Metric(name="eventCount")]
+defMets = ["eventCount"]
 
 # Function to pull report and return dataFrame
 def sample_run_report(property_id="MISSING", startDate="yesterday", endDate="yesterday", dims=defDims, mets=defMets, creds=""):
@@ -34,8 +34,11 @@ def sample_run_report(property_id="MISSING", startDate="yesterday", endDate="yes
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = creds
     # Rebuild dims and metrics from list of strings
     dimList = []
+    metList = []
     for i in dims:
       dimList.append(Dimension(name=i))
+    for i in mets:
+      dimList.append(Metric(name=i))
     
     # Using a default constructor instructs the client to use the credentials
     # specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
