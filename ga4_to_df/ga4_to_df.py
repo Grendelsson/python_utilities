@@ -33,7 +33,7 @@ def sample_run_report(property_id="MISSING", startDate="yesterday", endDate="yes
     # Set environment variables
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = creds
     # Rebuild dims and metrics from list of strings
-    dimlist = []
+    dimList = []
     for i in dims:
       dimList.append(Dimension(name=i))
     
