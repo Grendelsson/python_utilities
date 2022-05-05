@@ -1,4 +1,3 @@
-import os
 try:
   from google.analytics.data_v1beta import BetaAnalyticsDataClient
   from google.analytics.data_v1beta.types import DateRange
@@ -6,9 +5,7 @@ try:
   from google.analytics.data_v1beta.types import Metric
   from google.analytics.data_v1beta.types import RunReportRequest
 except:
-  print("Error importing GA packages. Will attempt to install using colab syntax. This will restart the runtime.")
-  !pip install google-analytics-data
-  os.kill(os.getpid(), 9)
+  print("Error importing GA packages.")
 
 # Utility function to convert to dataframe
 def ga4_response_to_df(response):
