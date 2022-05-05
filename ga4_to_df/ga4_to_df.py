@@ -25,7 +25,7 @@ def ga4_response_to_df(response):
     return df
   
 # Define default report dimensions and metrics
-defDims = [Dimension(name="eventName"),
+defDims = ["eventName"],
                 Dimension(name="pageTitle")]
 defMets = [Metric(name="eventCount")]
 
@@ -33,13 +33,18 @@ defMets = [Metric(name="eventCount")]
 def sample_run_report(property_id="MISSING", startDate="yesterday", endDate="yesterday", dims=defDims, mets=defMets, creds=""):
     # Set environment variables
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = creds
+    # Rebuild dims and metrics from list of strings
+    dimlist = []
+    for i in dims:
+      dimList.append(Dimension(name=i))
+    
     # Using a default constructor instructs the client to use the credentials
     # specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
     client = BetaAnalyticsDataClient()
 
     request = RunReportRequest(
         property=f"properties/{property_id}",
-        dimensions=dims,
+        dimensions=dimList,
         metrics=mets,
         date_ranges=[DateRange(start_date=startDate, end_date=endDate)],
     )
