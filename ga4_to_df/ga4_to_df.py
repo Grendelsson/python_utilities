@@ -25,8 +25,7 @@ def ga4_response_to_df(response):
     return df
   
 # Define default report dimensions and metrics
-defDims = ["eventName"],
-                Dimension(name="pageTitle")]
+defDims = ["eventName","pageTitle"]
 defMets = [Metric(name="eventCount")]
 
 # Function to pull report and return dataFrame
