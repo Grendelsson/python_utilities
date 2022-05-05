@@ -47,7 +47,7 @@ def sample_run_report(property_id="MISSING", startDate="yesterday", endDate="yes
     request = RunReportRequest(
         property=f"properties/{property_id}",
         dimensions=dimList,
-        metrics=mets,
+        metrics=metList,
         date_ranges=[DateRange(start_date=startDate, end_date=endDate)],
     )
     response = client.run_report(request)
