@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from . import colab_files
 try:
   from google.analytics.data_v1beta import BetaAnalyticsDataClient
   from google.analytics.data_v1beta.types import DateRange
